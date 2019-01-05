@@ -1,0 +1,25 @@
+{
+  "name": "dictionary",
+  "version": "1.0.0",
+  "description": "Command line tool for dictionary",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kishanpradhan/dictionary.git"
+  },
+  "keywords": [
+    "dictionary"
+  ],
+  "author": "Kishan Pradhan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kishanpradhan/dictionary/issues"
+  },
+  "homepage": "https://github.com/kishanpradhan/dictionary#readme",
+  "dependencies": {
+    "commander": "^2.19.0"
+  }
+}
