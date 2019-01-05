@@ -11,7 +11,8 @@ class Command extends BaseCommand {
 	run(value) {
 		return new Promise((resolve, reject) => {
 			console.log("Running ex command");
-			reject(value);
+			// reject(value);
+			resolve(value);
 		});
 	}
 }
