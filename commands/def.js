@@ -1,7 +1,9 @@
 const command = require('commander');
 
+const BaseCommand = require("../lib/command").BaseCommand;
 
-class DefinationCommand {
+
+class Command extends BaseCommand {
 	
 	// static name = "def";
 	get command_name() {
@@ -15,7 +17,8 @@ class DefinationCommand {
 
 	run(value) {
 		console.log("Running def command");
+		return value;
 	}
 }
 
-module.exports = DefinationCommand;
+module.exports = Command;

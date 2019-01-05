@@ -10,6 +10,7 @@ class Config {
 		this.storage = null;
 		// this.defaultConfig();
 		if(!manual) {
+			console.log("Not Manual");
 			this.registerCommands();
 			this.registerStorage();
 		}
