@@ -165,6 +165,7 @@ Enter word or the options -> `;
 					break;
 				case "3":
 					// console.log("Closing");
+					console.log("The word was", word.value);
 					this.user_interface.close();
 					break;
 				case word.value:

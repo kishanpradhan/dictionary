@@ -13,7 +13,7 @@ function run() {
 }
 
 function boot() {
-	config = get_config(false, true);
+	config = get_config(false, true); // currently not using
 	// Register commands
 	// Register storage
 	// On close event registration
@@ -21,7 +21,7 @@ function boot() {
 
 function start() {
 	boot();
-	console.log("App starting");
+	// console.log("App starting");
 	run();
 }
 
