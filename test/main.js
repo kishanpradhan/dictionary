@@ -2,7 +2,7 @@
 
 const expect = require('chai').expect;
 
-const dict = require("./index")
+const dict = require("../index");
 
 
 describe("Function", () => {

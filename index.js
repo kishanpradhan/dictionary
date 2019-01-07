@@ -9,7 +9,7 @@ let config;
 function run() {
 	// console.log(config.commands);
 	// command.parse(process.argv);
-	new Parser(process.argv).parse();
+	new Parser(process.argv).parse().then(() => {}).catch(() => {});
 }
 
 function boot() {

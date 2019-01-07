@@ -6,8 +6,9 @@ const BaseCommand = require("../lib/command").BaseCommand;
 class Command extends BaseCommand {
 	
 	run(value) {
-		console.log("Running Word command", this.name);
-		return this.name;
+		value = value || this.name;
+		console.log("Running Word(dict) command", value);
+		return value;
 	}
 }
 
