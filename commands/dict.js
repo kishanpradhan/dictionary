@@ -67,7 +67,7 @@ class Command extends BaseCommand {
 	display(data) {
 		if(!this.output) { return }
 		// console.log(data);
-		console.log("Add data \n");
+		console.log("All data \n");
 		for(let category in data) {
 			console.log("    ", category, ":");
 			for(let type in data[category]) {
