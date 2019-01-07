@@ -6,10 +6,14 @@ const CommandFacade = require("../lib/command").CommandFacade;
 
 class Command extends BaseCommand {
 	
+	get command_name() {
+		return "dict";
+	}
+
 	run(value) {
 		return new Promise((resolve, reject) => {
 			value = value || this.name;
-			console.log("Running dict command", value);
+			// console.log("Running dict command", value);
 			let all_commands = [
 				CommandFacade.get("def").setDisplay(false).run(value),
 				CommandFacade.get("syn").setDisplay(false).run(value),
@@ -27,7 +31,6 @@ class Command extends BaseCommand {
 			}).catch((err) => {
 				reject(err);
 			});
-			return value;
 		});
 	}
 
@@ -49,8 +52,6 @@ class Command extends BaseCommand {
 			final_result["Verb"] = {
 				"Definitions": results[0].Verb,
 				"Examples": results[3].Verb,
-				"Synonyms": results[1].Verb,
-				"Antonyms": results[2].Verb,
 			};
 			resolve(final_result);
 			/*

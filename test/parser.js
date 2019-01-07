@@ -81,6 +81,30 @@ describe("Parser Check", () => {
 		});
 	});
 
+	it("#6. Word of the Day Full Dict", (done) => {
+		let promise = new Parser(["node", "file" ]).parse();
+		expect(promise instanceof Promise).to.equal(true);
+		promise.then((res) => {
+			expect(res.length).to.equal(1);
+			done();
+		}).catch((err) => {
+			console.log("Error", err);
+			done(err instanceof Error ? err : new Error(err));
+		});
+	});
+
+	it("#7. Word Game", (done) => {
+		let promise = new Parser(["node", "file", "play"]).parse();
+		expect(promise instanceof Promise).to.equal(true);
+		promise.then((res) => {
+			expect(res.length).to.equal(1);
+			done();
+		}).catch((err) => {
+			console.log("Error", err);
+			done(err instanceof Error ? err : new Error(err));
+		});
+	});
+
 	after(() => {
 	});
 

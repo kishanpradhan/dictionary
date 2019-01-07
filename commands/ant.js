@@ -12,7 +12,7 @@ class Command extends BaseCommand {
 	}
 
 	run(value) {
-		console.log("Getting antonyms of", value);
+		// console.log("Getting antonyms of", value);
 		let uri = `/entries/${this.language}/${value}/antonyms`;
 		return new Promise((resolve, reject) => {
 			new Word(uri).get(value).then((results) => {

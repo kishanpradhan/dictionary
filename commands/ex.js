@@ -11,8 +11,8 @@ class Command extends BaseCommand {
 	}
 
 	run(value) {
-		console.log("Getting examples for", value);
-		let uri = `/entries/${this.language}/${value}`;
+		// console.log("Getting examples for", value);
+		let uri = `/entries/${this.language}/${value}/sentences`;
 		return new Promise((resolve, reject) => {
 			new Word(uri).get(value).then((results) => {
 				// console.log("Got data", JSON.stringify(results[0], null, 6));
@@ -23,13 +23,9 @@ class Command extends BaseCommand {
 					for(let lexical_entry of result.lexicalEntries || []) {
 						let category = lexical_entry.lexicalCategory;
 						final_result[category] = [];
-						for(let entry of lexical_entry.entries) {
-							for(let sense of entry.senses) {
-								// console.log(category, sense);
-								for(let example of sense.examples) {
-									final_result[category] = final_result[category].concat(example.text);
-								}
-							}
+						for(let sentence of lexical_entry.sentences) {
+							// console.log(final_result[category].push, category, sentence);
+							final_result[category].push(sentence.text);
 						}
 					}
 				}

@@ -17,7 +17,7 @@ class Command extends BaseCommand {
 	}
 
 	run(value) {
-		console.log("Running def command");
+		// console.log("Running def command");
 		let uri = `/entries/${this.language}/${value}`;
 		return new Promise((resolve, reject) => {
 			new Word(uri).get(value).then((results) => {
