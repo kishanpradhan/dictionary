@@ -70,10 +70,10 @@ describe("Parser Check", () => {
 	});
 
 	it("#5. Word Full Dict. Multiple also", (done) => {
-		let promise = new Parser(["node", "file", "word1", "word2", "word3"]).parse();
+		let promise = new Parser(["node", "file", "ace"]).parse();
 		expect(promise instanceof Promise).to.equal(true);
 		promise.then((res) => {
-			expect(res.length).to.equal(3);
+			expect(res.length).to.equal(1);
 			done();
 		}).catch((err) => {
 			console.log("Error", err);

@@ -48,6 +48,7 @@ class Command extends BaseCommand {
 	}
 
 	display(data) {
+		if(!this.output) { return }
 		// console.log(data);
 		console.log("Defination \n");
 		for(let category in data) {

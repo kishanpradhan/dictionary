@@ -52,6 +52,7 @@ class Command extends BaseCommand {
 	}
 
 	display(data) {
+		if(!this.output) { return }
 		// console.log(data);
 		console.log("Synonyms \n");
 		for(let category in data) {

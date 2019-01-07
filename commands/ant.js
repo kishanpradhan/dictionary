@@ -45,6 +45,7 @@ class Command extends BaseCommand {
 	}
 
 	display(data) {
+		if(!this.output) { return }
 		// console.log(data);
 		console.log("\nAntonyms \n");
 		for(let category in data) {
