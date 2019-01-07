@@ -4,7 +4,7 @@
   "description": "Command line tool for dictionary",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --reporter spec",
+    "test": "mocha --reporter spec --timeout 10000",
     "test_check": "mocha"
   },
   "repository": {

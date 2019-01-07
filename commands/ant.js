@@ -8,7 +8,7 @@ class Command extends BaseCommand {
 	
 	// static name = "def";
 	get command_name() {
-		return "sync";
+		return "ant";
 	}
 
 	run(value) {

@@ -8,7 +8,6 @@ const Parser = require("../lib/command").Parser;
 describe("Parser Check", () => {
 
 	before(() => {
-		console.log("Before");
 	});
 
 	it("should check all number of arguments", () => {
@@ -33,11 +32,11 @@ describe("Parser Check", () => {
 		});
 	});
 
-	it("#2. Word Synonyms", (done) => {
+	it("#2. Word Synonyms", function(done) {
 		let promise = new Parser(["node", "file", "syn", "ace"]).parse();
 		expect(promise instanceof Promise).to.equal(true);
 		promise.then((res) => {
-			console.log(res);
+			// console.log(res);
 			expect(res.length).to.equal(1);
 			done();
 		}).catch((err) => {
@@ -47,10 +46,21 @@ describe("Parser Check", () => {
 	});
 
 	it("#3. Word Antonyms", (done) => {
-		let promise = new Parser(["node", "file", "syn", "ace"]).parse();
+		let promise = new Parser(["node", "file", "ant", "ace"]).parse();
 		expect(promise instanceof Promise).to.equal(true);
 		promise.then((res) => {
-			console.log(res);
+			expect(res.length).to.equal(1);
+			done();
+		}).catch((err) => {
+			console.log("Error", err);
+			done(err instanceof Error ? err : new Error(err));
+		});
+	});
+
+	it("#4. Word Examples", (done) => {
+		let promise = new Parser(["node", "file", "ex", "ace"]).parse();
+		expect(promise instanceof Promise).to.equal(true);
+		promise.then((res) => {
 			expect(res.length).to.equal(1);
 			done();
 		}).catch((err) => {
@@ -72,6 +82,6 @@ describe("Parser Check", () => {
 	});
 
 	after(() => {
-		console.log("After");
 	});
+
 });
